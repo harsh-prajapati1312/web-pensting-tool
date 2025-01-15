@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Bug Bounty Tool</title>
+      <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body class="bg-gray-100 flex justify-center items-center min-h-screen">
+      <div class="container bg-white p-6 rounded-lg shadow-xl w-4/5 max-w-4xl">
+        <h1 class="text-3xl font-bold text-center mb-6 text-gray-800">Bug Bounty Tool</h1>
+        <div class="flex mb-4">
+          <input type="text" id="input-box" placeholder="Enter your target domain" class="flex-1 px-4 py-2 border rounded-md mr-2 focus:ring focus:ring-blue-300 focus:outline-none">
+          <button id="run-button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Run</button>
+        </div>
+        <div id="terminal-controls" class="flex justify-between mb-4 hidden transition-opacity duration-300 opacity-0">
+          <button id="clear-button" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-transform duration-300 transform hover:scale-105">
+            <i class="fas fa-eraser mr-2"></i>Clear
+          </button>
+          <button id="export-button" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-transform duration-300 transform hover:scale-105">
+            <i class="fas fa-file-export mr-2"></i>Export
+          </button>
+        </div>
+        <div id="terminal-output" class="terminal bg-gray-800 text-white p-4 rounded-md font-mono overflow-y-auto max-h-96 hidden transition-opacity duration-300 opacity-0 transform scale-95"></div>
+      </div>
+      <script src="/socket.io/socket.io.js"></script>
+      <script src="script.js"></script>
+    </body>
+    </html>
